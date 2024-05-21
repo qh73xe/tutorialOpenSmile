@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenSmile &mdash; OpenSmile Tutorial 0.1 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="音声の録音" href="Recording.html" />
+    <link rel="prev" title="ソースフィルターモデル" href="SourceFilterModel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            OpenSmile Tutorial
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenSmile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">この章を試すための環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#praat">音声を録音する (Praat 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-smile">Open Smile を用いて音響特徴量を抽出する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Open Smile が算出する音響特徴量を観察する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">どのような音響特徴量が変化するのかを考え実際に比較する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">この章のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">次の章に向けて</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OpenSmile Tutorial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">OpenSmile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/OpenSmile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="opensmile">
+<h1><a class="toc-backref" href="#id10" role="doc-backlink">OpenSmile</a><a class="headerlink" href="#opensmile" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>qh73xe</p>
+</dd>
+<dt class="field-even">Last Change<span class="colon">:</span></dt>
+<dd class="field-even"><p>21-May-2024.</p>
+</dd>
+</dl>
+<nav class="contents" id="id1">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#opensmile" id="id10">OpenSmile</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id11">このパートで行うこと</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id12">はじめに</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id13">この章を試すための環境構築</a></p></li>
+<li><p><a class="reference internal" href="#praat" id="id14">音声を録音する (Praat 編)</a></p></li>
+<li><p><a class="reference internal" href="#open-smile" id="id15">Open Smile を用いて音響特徴量を抽出する</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id16">この章のまとめ</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id17">次の章に向けて</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="id2">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>OpenSmile が解決したい課題を理解する</p></li>
+<li><p>OpenSmile の音響特徴量の基本構成を理解する</p></li>
+<li><p>読み込んだ音声データから音響特徴量を抽出する</p></li>
+<li><p>抽出した音響特徴量を比較する</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">はじめに</a><a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="SourceFilterModel.html#sec1"><span class="std std-ref">前章</span></a> では, 音声データを解析するときには,
+ソース(音源, 基本周波数) とフィルタ(声道特性, スペクトル特性) の二つの要素を
+使えば, 元の音声データを再現できる程度の情報を得られることを説明しました.
+しかし, 特にスペクトル特性に関しては,
+解釈が難しく, 少し使いにくい指標であることも説明しました.</p>
+<p>このセッションで取り扱う <code class="code docutils literal notranslate"><span class="pre">OpenSmile</span></code> は,
+この問題意識から生まれた解析ツールになります.
+実は, 過去の音声, 音響学者たちは,
+声帯や声道がどういう状態になっているときに
+スペクトル成分にはどういう特徴が現れるかを長年研究をしてきました.</p>
+<p>そして, 研究が進むにつれて,
+特定のジャンル, 例えば感情音声においては,
+大体, こういう口の動きが重要であるということもわかってきました.
+この二つが組み合わさると, つまり, スペクトル特性のうち,
+こういう部分を見るのが大事なのだという指標が生まれてきます.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">OpenSmile</span></code> は,
+このような研究をまとめ,
+代表的ないくつかの指標のセットをまとめて
+基本周波数やスペクトル特性から計算することができるツールです.</p>
+</section>
+<section id="id4">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">この章を試すための環境構築</a><a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>この章を試すためには, 以下のライブラリが必要です:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install setuptools wheel ipython # python 用インタラクティブシェル
+$ pip install numpy scipy matplotlib pandas  # 数値計算用及び可視化ライブラリ
+$ pip install opensmile  # 今回の主題である音響解析ツール. 3 章で使用.
+</pre></div>
+</div>
+</section>
+<section id="praat">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">音声を録音する (Praat 編)</a><a class="headerlink" href="#praat" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>この章は 3 章から読み始める方に向けた記述です.</p>
+<p><a class="reference internal" href="SourceFilterModel.html#sec1cap2"><span class="std std-ref">前章</span></a> で音声を録音している方は,
+この章は読み飛ばしてください.</p>
+</div>
+<p>さて, 解析を行うためにはまず, 音声データが必要です.
+後の章では, <code class="code docutils literal notranslate"><span class="pre">python</span></code> コードから録音を行う方法を紹介する予定ですが,
+少し複雑なので, とりあえず, <code class="code docutils literal notranslate"><span class="pre">Praat</span></code> から音声を録音することにしましょう.</p>
+<p>録音は Praat を開いて <code class="code docutils literal notranslate"><span class="pre">New</span></code> &gt; <code class="code docutils literal notranslate"><span class="pre">Record</span> <span class="pre">mono</span> <span class="pre">sound</span></code> から行います.
+新規にウィンドウが開かれるので <code class="code docutils literal notranslate"><span class="pre">Record</span></code> ボタンを押して録音を開始します.
+<cite>Stop</cite> ボタンを押すと <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">to</span> <span class="pre">list</span></code> というボタンが活性化されます.
+これを押すと, メインウィンドウに録音した音声が表示されます.
+最後に <code class="code docutils literal notranslate"><span class="pre">Save</span></code> &gt; <code class="code docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as</span> <span class="pre">WAV</span> <span class="pre">file</span></code> で音声を保存します.</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>ここでは必ず, <code class="code docutils literal notranslate"><span class="pre">mono</span> <span class="pre">sound</span></code> で録音を行ってください.
+このチュートリアルでは, モノラル音声専用の解説を行います.
+ステレオ音声をどのように解析するのかについては,
+ご自身で調べてみてください.</p>
+</div>
+<p>音声ファイルの保存先は <a class="reference internal" href="Intro.html#sec0cap3"><span class="std std-ref">前章</span></a> で作成した
+<code class="code docutils literal notranslate"><span class="pre">OpenSmileTutorial</span></code> ディレクトリに,
+<code class="code docutils literal notranslate"><span class="pre">sample1.wav</span></code> という名前で保存してください.</p>
+<p><a class="reference download internal" download="" href="_downloads/5ecfd3b41d179963ae50924d7a01010e/sample1.wav"><code class="xref download docutils literal notranslate"><span class="pre">sample1.wav</span></code></a>.</p>
+</section>
+<section id="open-smile">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Open Smile を用いて音響特徴量を抽出する</a><a class="headerlink" href="#open-smile" title="Permalink to this heading"></a></h2>
+<p>早速 <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> を使って音響特徴量を抽出してみましょう.</p>
+<p>先にも述べたとおり, 基本的には, 音に対するリトマス試験紙です.
+これを利用する手順は大きく以下の 4 つです.</p>
+<ol class="arabic simple" start="0">
+<li><p>試験紙を用意する = 解析用のライブラリを読み込む</p></li>
+<li><p>観察したい標本を取得する = 音声ファイルを読み込む</p></li>
+<li><p>試験紙につける = 音声ファイルから音響特徴量を抽出する</p></li>
+<li><p>色を見る = 音響特徴量を観察する</p></li>
+</ol>
+<p>それでは, 作業を開始しましょう:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ipython
+</pre></div>
+</div>
+<section id="id5">
+<h3>Open Smile が算出する音響特徴量を観察する<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<p>まず試験紙を用意します:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">opensmile</span> <span class="kn">import</span> <span class="n">Smile</span><span class="p">,</span> <span class="n">FeatureSet</span><span class="p">,</span> <span class="n">FeatureLevel</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">wavfile</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">smile</span> <span class="o">=</span> <span class="n">Smile</span><span class="p">(</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">feature_set</span><span class="o">=</span><span class="n">FeatureSet</span><span class="o">.</span><span class="n">eGeMAPSv02</span><span class="p">,</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">feature_level</span><span class="o">=</span><span class="n">FeatureLevel</span><span class="o">.</span><span class="n">LowLevelDescriptors</span><span class="p">,</span>
+   <span class="o">...</span><span class="p">:</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>試験紙の用意の仕方が <a class="reference internal" href="SourceFilterModel.html#sec1cap41"><span class="std std-ref">前章</span></a> とちょっと違うことに気がつきましたか？
+<a class="reference internal" href="SourceFilterModel.html#sec1cap41"><span class="std std-ref">前章</span></a> では, ただ <code class="code docutils literal notranslate"><span class="pre">import</span></code> して入ればすぐに利用できたのに対して,
+今回は <code class="code docutils literal notranslate"><span class="pre">Smile</span></code> というクラスをインスタンス化しています.</p>
+<p>なぜかと言えば <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> が複数の指標を
+<strong>セットでまとめて検査するキット</strong> だからです.</p>
+<p>この特徴量のセットの内容は
+解析する目的に応じて変わります.
+それを指定している箇所が <code class="code docutils literal notranslate"><span class="pre">feature_set</span></code> です.</p>
+<p>このセットには色々なものがあるのですが,
+今回は感情音声の解析によく使われる指標のセットである
+<a class="reference external" href="https://sail.usc.edu/publications/files/eyben-preprinttaffc-2015.pdf">eGeMAPS</a>
+の最新バージョンを利用しています.
+時間の関係で, それぞれのセットについての解説は割愛しますが,
+興味がある方はリンク先を参照してください.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://audeering.github.io/opensmile-python/api/opensmile.FeatureSet.html#opensmile.FeatureSet.eGeMAPSv02">FeatureSet</a></p></li>
+<li><p>このページには, 利用可能な特徴量セットの一覧があります.</p></li>
+<li><p>また, そのセットが発表された論文へのリンクもあります.</p></li>
+<li><p>現在は, emobase に関しては論文のリンクはありませんが
+<a class="reference external" href="https://audeering.github.io/opensmile/get-started.html">この資料</a>
+を読む限り, <a class="reference external" href="https://mediatum.ub.tum.de/doc/1082470/document.pdf">INTERSPEECH 2010 Paralinguistic Challenge</a> が元になっているようです.</p></li>
+</ul>
+<p>もう一つ <code class="code docutils literal notranslate"><span class="pre">feature_level</span></code> という引数があります.
+これは, 解析の時間軸を決める設定です.
+<a class="reference internal" href="SourceFilterModel.html#sec1cap4"><span class="std std-ref">前章</span></a> でみた通り, 音声データは基本的に時間軸を持っています.
+そうすると, 基本的には, 各一つ一つの解析フレームに対して,
+指標を得ることも可能です.
+このような解析を行いたい場合には <code class="code docutils literal notranslate"><span class="pre">FeatureLevel.LowLevelDescriptors</span></code> を指定します.</p>
+<p>一方で, 一つの音声といった比較的長い区間の特性を知りたい場合もあります.
+例えば, ある音声のうち, 声帯振動が起きていない時間の比率や,
+F0 が時間的にどのように傾いているのかなどです.
+この場合には <code class="code docutils literal notranslate"><span class="pre">FeatureLevel.Functionals</span></code> を指定します.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">feature_level</span></code> に関しては,
+このチュートリアルでは, 両方ともに紹介をしていく予定ですが,
+まずは, 基本となる <code class="code docutils literal notranslate"><span class="pre">FeatureLevel.LowLevelDescriptors</span></code>
+から試してみましょう.</p>
+<p>検査キットの用意が終わったので,
+次に観察したい標本を取得します.
+これは:ref:<cite>前章 &lt;sec1cap41&gt;</cite> と同様の方法で実施できます:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">fs</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;./sample1.wav&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>この部分の解説は <cite>以下 &lt;sec1cap41&gt;</cite> を参照してください.</p>
+</div>
+<p>最後に, 試験紙に標本をつけてみます:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">result</span> <span class="o">=</span> <span class="n">smile</span><span class="o">.</span><span class="n">process_signal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">df</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+                   <span class="n">start</span>  <span class="o">...</span> <span class="n">F3amplitudeLogRelF0_sma3nz</span>
+<span class="mi">0</span>        <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="o">...</span>                     <span class="o">-</span><span class="mf">201.0</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.010000</span>  <span class="o">...</span>                     <span class="o">-</span><span class="mf">201.0</span>
+<span class="mi">2</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.020000</span>  <span class="o">...</span>                     <span class="o">-</span><span class="mf">201.0</span>
+<span class="mi">3</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.030000</span>  <span class="o">...</span>                     <span class="o">-</span><span class="mf">201.0</span>
+<span class="mi">4</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.040000</span>  <span class="o">...</span>                     <span class="o">-</span><span class="mf">201.0</span>
+
+<span class="p">[</span><span class="mi">5</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">27</span> <span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>それなりに指標の数が多いので, 省略されてしまいますね.
+とりあえず, ヘッダーを確認してみましょう:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;end&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Loudness_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;alphaRatio_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hammarbergIndex_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slope0-500_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slope500-1500_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFlux_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc1_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc2_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc3_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc4_sma3&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;jitterLocal_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;shimmerLocaldB_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;HNRdBACF_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-H2_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-A3_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1frequency_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1bandwidth_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1amplitudeLogRelF0_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2frequency_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2bandwidth_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2amplitudeLogRelF0_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3frequency_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3bandwidth_sma3nz&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3amplitudeLogRelF0_sma3nz&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">start</span></code> と <code class="code docutils literal notranslate"><span class="pre">end</span></code> は, それぞれの解析フレームの開始時刻と終了時刻です.
+それ以外の 25 行が, 音響特徴量のセットになります.</p>
+<p>それぞれの特徴量が何を計測したものであるのかを,
+以下に示します.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴量名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Loudness_sma3</p></td>
+<td><p>音圧に対する知覚強度の推定値</p></td>
+</tr>
+<tr class="row-odd"><td><p>alphaRatio_sma3</p></td>
+<td><p>50-1000 Hz と 1-5 kHz のエネルギー比</p></td>
+</tr>
+<tr class="row-even"><td><p>hammarbergIndex_sma3</p></td>
+<td><p>0-2 kHz 領域に対する 2-5 kHz 領域の最も強いエネルギーピーク比</p></td>
+</tr>
+<tr class="row-odd"><td><p>slope0-500_sma3</p></td>
+<td><p>帯域内の対数パワースペクトルの線形回帰勾配</p></td>
+</tr>
+<tr class="row-even"><td><p>slope500-1500_sma3</p></td>
+<td><p>帯域内の対数パワースペクトルの線形回帰勾配</p></td>
+</tr>
+<tr class="row-odd"><td><p>spectralFlux_sma3</p></td>
+<td><p>連続する 2 つのフレームのスペクトルの差の平均</p></td>
+</tr>
+<tr class="row-even"><td><p>mfcc1_sma3</p></td>
+<td><p>MFCC 第 1 次元</p></td>
+</tr>
+<tr class="row-odd"><td><p>mfcc2_sma3</p></td>
+<td><p>MFCC 第 2 次元</p></td>
+</tr>
+<tr class="row-even"><td><p>mfcc3_sma3</p></td>
+<td><p>MFCC 第 3 次元</p></td>
+</tr>
+<tr class="row-odd"><td><p>mfcc4_sma3</p></td>
+<td><p>MFCC 第 4 次元</p></td>
+</tr>
+<tr class="row-even"><td><p>F0semitoneFrom27.5Hz_sma3nz</p></td>
+<td><p>27.5 Hz を基準とする半音周波数スケールでの対数 F0</p></td>
+</tr>
+<tr class="row-odd"><td><p>jitterLocal_sma3nz</p></td>
+<td><p>個々の連続した F0 の長さの偏差</p></td>
+</tr>
+<tr class="row-even"><td><p>shimmerLocaldB_sma3nz</p></td>
+<td><p>個々の連続した F0 の振幅に対する偏差</p></td>
+</tr>
+<tr class="row-odd"><td><p>HNRdBACF_sma3nz</p></td>
+<td><p>ノイズ成分に対する信号成分の比率</p></td>
+</tr>
+<tr class="row-even"><td><p>logRelF0-H1-H2_sma3nz</p></td>
+<td><p>第 1 倍音と第 2 倍音の振幅差</p></td>
+</tr>
+<tr class="row-odd"><td><p>logRelF0-H1-A3_sma3nz</p></td>
+<td><p>第 1 倍音と第 3 フォルマント周波数に近接した倍音の振幅差</p></td>
+</tr>
+<tr class="row-even"><td><p>F1frequency_sma3nz</p></td>
+<td><p>第 1 フォルマントの周波数</p></td>
+</tr>
+<tr class="row-odd"><td><p>F1bandwidth_sma3nz</p></td>
+<td><p>第 1 フォルマントの帯域幅</p></td>
+</tr>
+<tr class="row-even"><td><p>F1amplitudeLogRelF0_sma3nz</p></td>
+<td><p>第 1 フォルマントの振幅</p></td>
+</tr>
+<tr class="row-odd"><td><p>F2frequency_sma3nz</p></td>
+<td><p>第 2 フォルマントの周波数</p></td>
+</tr>
+<tr class="row-even"><td><p>F2bandwidth_sma3nz</p></td>
+<td><p>第 2 フォルマントの帯域幅</p></td>
+</tr>
+<tr class="row-odd"><td><p>F2amplitudeLogRelF0_sma3nz</p></td>
+<td><p>第 2 フォルマントの振幅</p></td>
+</tr>
+<tr class="row-even"><td><p>F3frequency_sma3nz</p></td>
+<td><p>第 3 フォルマントの周波数</p></td>
+</tr>
+<tr class="row-odd"><td><p>F3bandwidth_sma3nz</p></td>
+<td><p>第 3 フォルマントの帯域幅</p></td>
+</tr>
+<tr class="row-even"><td><p>F3amplitudeLogRelF0_sma3nz</p></td>
+<td><p>第 3 フォルマントの振幅</p></td>
+</tr>
+</tbody>
+</table>
+<p>さて, 続いては音声全体の統計量を測る指標に変更してみましょう:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">smile</span> <span class="o">=</span> <span class="n">Smile</span><span class="p">(</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">feature_set</span><span class="o">=</span><span class="n">FeatureSet</span><span class="o">.</span><span class="n">eGeMAPSv02</span><span class="p">,</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="n">feature_level</span><span class="o">=</span><span class="n">FeatureLevel</span><span class="o">.</span><span class="n">Functionals</span><span class="p">,</span>
+   <span class="o">...</span><span class="p">:</span> <span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">res2</span> <span class="o">=</span> <span class="n">smile</span><span class="o">.</span><span class="n">process_signal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">res2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">df2</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span>
+   <span class="n">start</span>                       <span class="n">end</span>  <span class="o">...</span>  <span class="n">StddevUnvoicedSegmentLength</span>  <span class="n">equivalentSoundLevel_dBp</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">0</span> <span class="n">days</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">15.924535147</span>  <span class="o">...</span>                          <span class="mf">0.0</span>                 <span class="o">-</span><span class="mf">3.026643</span>
+
+<span class="p">[</span><span class="mi">1</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">90</span> <span class="n">columns</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>今度は一つの音声ファイル全体に対する評価指標であるので,
+行数は <code class="code docutils literal notranslate"><span class="pre">1</span> <span class="pre">rows</span></code> となっています.
+代わりに列数は <code class="code docutils literal notranslate"><span class="pre">90</span> <span class="pre">columns</span></code> となっています.</p>
+<p>先ほどと同様に, どのような音響特徴量が計測されているのかを
+確認してみましょう:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">df2</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;end&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_percentile20.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_percentile50.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_percentile80.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_percentile20.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_percentile50.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_percentile80.0&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_pctlrange0-2&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_meanRisingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_stddevRisingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_meanFallingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudness_sma3_stddevFallingSlope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFlux_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFlux_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc1_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc1_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc2_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc2_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc3_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc3_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc4_sma3_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc4_sma3_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;jitterLocal_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;jitterLocal_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;shimmerLocaldB_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;shimmerLocaldB_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;HNRdBACF_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;HNRdBACF_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-H2_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-H2_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-A3_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;logRelF0-H1-A3_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1frequency_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1frequency_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1bandwidth_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1bandwidth_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1amplitudeLogRelF0_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F1amplitudeLogRelF0_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2frequency_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2frequency_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2bandwidth_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2bandwidth_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2amplitudeLogRelF0_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F2amplitudeLogRelF0_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3frequency_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3frequency_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3bandwidth_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3bandwidth_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3amplitudeLogRelF0_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;F3amplitudeLogRelF0_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;alphaRatioV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;alphaRatioV_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hammarbergIndexV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hammarbergIndexV_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeV0-500_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeV0-500_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeV500-1500_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeV500-1500_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFluxV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFluxV_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc1V_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc1V_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc2V_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc2V_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc3V_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc3V_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc4V_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mfcc4V_sma3nz_stddevNorm&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;alphaRatioUV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hammarbergIndexUV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeUV0-500_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slopeUV500-1500_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;spectralFluxUV_sma3nz_amean&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;loudnessPeaksPerSec&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;VoicedSegmentsPerSec&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;MeanVoicedSegmentLengthSec&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;StddevVoicedSegmentLengthSec&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;MeanUnvoicedSegmentLength&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;StddevUnvoicedSegmentLength&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;equivalentSoundLevel_dBp&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>何か色々と増えていますが,
+実は多くの内容は, 先ほどの特徴量に対して,
+平均や標準偏差, パーセンタイルなどの統計量を計算しただけです.
+少し, 特殊なものとして,
+F0 に対しては, 上昇傾斜や下降傾斜の回数の平均や標準偏差が計算されています.
+また, 以下のような特徴量も計算されています.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>特徴量名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>loudnessPeaksPerSec</p></td>
+<td><p>一秒あたりの音圧ピークの数</p></td>
+</tr>
+<tr class="row-even"><td><p>VoicedSegmentsPerSec</p></td>
+<td><p>一秒あたりの有声音セグメントの数</p></td>
+</tr>
+<tr class="row-odd"><td><p>MeanVoicedSegmentLengthSec</p></td>
+<td><p>有声音セグメントの平均長</p></td>
+</tr>
+<tr class="row-even"><td><p>StddevVoicedSegmentLengthSec</p></td>
+<td><p>有声音セグメントの標準偏差</p></td>
+</tr>
+<tr class="row-odd"><td><p>MeanUnvoicedSegmentLength</p></td>
+<td><p>無声音セグメントの平均長</p></td>
+</tr>
+<tr class="row-even"><td><p>StddevUnvoicedSegmentLength</p></td>
+<td><p>無声音セグメントの標準偏差</p></td>
+</tr>
+<tr class="row-odd"><td><p>equivalentSoundLevel_dBp</p></td>
+<td><p>等価音圧レベル</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h3>どのような音響特徴量が変化するのかを考え実際に比較する<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="id8">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">この章のまとめ</a><a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+</section>
+<section id="id9">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">次の章に向けて</a><a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SourceFilterModel.html" class="btn btn-neutral float-left" title="ソースフィルターモデル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Recording.html" class="btn btn-neutral float-right" title="音声の録音" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, qh73xe.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
