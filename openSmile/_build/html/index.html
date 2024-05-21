@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="./">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Open Smile Tutorial &mdash; OpenSmile Tutorial 0.1 ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
 
   
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=be13464f"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/translations.js?v=4dbe4bdc"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
@@ -44,7 +44,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a></li>
@@ -78,43 +78,41 @@
            <div itemprop="articleBody">
              
   <section id="open-smile-tutorial">
-<h1>Open Smile Tutorial<a class="headerlink" href="#open-smile-tutorial" title="Link to this heading"></a></h1>
+<h1>Open Smile Tutorial<a class="headerlink" href="#open-smile-tutorial" title="Permalink to this heading"></a></h1>
 <p>このチュートリアルでは, Open Smile を用いて,
 音声から音響特徴量を計測できるようにする方法を整理します.</p>
-<p>まずは, 音声解析の基本となるソースフィルターモデルについて,
-簡単に解説し, 音の基本成分を理解します.</p>
-<p>続いて, より音声生成に即した特徴を分析する方法として,
-Open Smile について解説します.</p>
-<p>その後, 補足として音声を収録する方法について簡単に解説し,
-実際に収録した音声を用いて, Open Smile の特徴量を観察してみます.</p>
-<p>最後に, 今までの内容を組み合わせて,
-簡単な 計測用 Web アプリケーションを作成します.</p>
+<p>このチュートリアルは, 大きく以下の 5 つのセクションに分かれています.
+それぞれのセクションは, どこから読み始めても問題ないように作成していますが,
+基本的には, 上から順番に読むことをお勧めします.</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>このチュートリアルでは,
 基本的に, Python 3 を用いて解説を行います.</p>
 <p>音声収録及び, Web アプリケーションの例には,
 一部, TypeScript を利用します.</p>
+<p>これらの一章で, これらの環境構築に関して
+簡単に触れますが, 基本的にはプログラミングが
+行えることを前提に資料を作成するので,
+プログラミング言語自体の詳細については省きます.</p>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">目次:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Intro.html#id3">このパートで行うこと</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Intro.html#id4">今日やること</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap1">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap2">今日やること</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Intro.html#python">開発環境の構築 (PYTHON 編)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Intro.html#typescript">開発環境の構築 (TYPESCRIPT 編)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id3">このパートで行うこと</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id4">はじめに</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id5">この章を試すための環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap0">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap1">はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap2">この章を試すための環境構築</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#praat">音声を録音する (Praat 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id6">録音した音声を読み込む</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#world">World を用いて基本的な音響特徴量を把握する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id12">この章のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#id13">次の章に向けて</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap5">この章のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap6">次の章に向けて</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OpenSmile.html">OpenSmile</a><ul>
@@ -122,7 +120,6 @@ Open Smile について解説します.</p>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id3">はじめに</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id4">この章を試すための環境構築</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#praat">音声を録音する (Praat 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id5">録音した音声を読み込む</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#open-smile">Open Smile を用いて音響特徴量を抽出する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id8">この章のまとめ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id9">次の章に向けて</a></li>
@@ -147,14 +144,6 @@ Open Smile について解説します.</p>
 </li>
 </ul>
 </div>
-<section id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">モジュール索引</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">検索ページ</span></a></p></li>
-</ul>
-</section>
 </section>
 
 
