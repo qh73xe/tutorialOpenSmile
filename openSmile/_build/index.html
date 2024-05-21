@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Smile Tutorial &mdash; OpenSmile Tutorial 0.1 ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=be13464f"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="はじめに" href="Intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            OpenSmile Tutorial
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSmile.html">OpenSmile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">OpenSmile Tutorial</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Open Smile Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="open-smile-tutorial">
+<h1>Open Smile Tutorial<a class="headerlink" href="#open-smile-tutorial" title="Link to this heading"></a></h1>
+<p>このチュートリアルでは, Open Smile を用いて,
+音声から音響特徴量を計測できるようにする方法を整理します.</p>
+<p>このチュートリアルは, 大きく以下の 5 つのセクションに分かれています.
+それぞれのセクションは, どこから読み始めても問題ないように作成していますが,
+基本的には, 上から順番に読むことをお勧めします.</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>このチュートリアルでは,
+基本的に, Python 3 を用いて解説を行います.</p>
+<p>音声収録及び, Web アプリケーションの例には,
+一部, TypeScript を利用します.</p>
+<p>これらの一章で, これらの環境構築に関して
+簡単に触れますが, 基本的にはプログラミングが
+行えることを前提に資料を作成するので,
+プログラミング言語自体の詳細については省きます.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">目次:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap1">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap2">今日やること</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#python">開発環境の構築 (PYTHON 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Intro.html#typescript">開発環境の構築 (TYPESCRIPT 編)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap0">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap1">はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap2">この章を試すための環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#praat">音声を録音する (Praat 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#world">World を用いて基本的な音響特徴量を把握する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap5">この章のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceFilterModel.html#sec1cap6">次の章に向けて</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OpenSmile.html">OpenSmile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id2">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id3">はじめに</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id4">この章を試すための環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#praat">音声を録音する (Praat 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#open-smile">Open Smile を用いて音響特徴量を抽出する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id8">この章のまとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id9">次の章に向けて</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Recording.html#id3">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recording.html#id4">音声の録音パラメータ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recording.html#id5">この章を試すための環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recording.html#python">音声を録音する (Python 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recording.html#id6">録音した音声を保存する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id2">このパートで行うこと</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id3">サーバーアンドクライアント</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#ui">UI 作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id4">音声を録音する (Web 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id5">音声解析サーバーを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id6">UI 表示を作成する</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Intro.html" class="btn btn-neutral float-right" title="はじめに" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, qh73xe.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
