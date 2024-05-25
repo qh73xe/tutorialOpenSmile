@@ -50,14 +50,15 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">はじめに</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sec0cap1">このパートで行うこと</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sec0cap2">今日やること</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python">開発環境の構築 (PYTHON 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#typescript">開発環境の構築 (TYPESCRIPT 編)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">開発環境の構築 (PYTHON 編)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#google-colab">Google Colab 環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">ローカル 環境</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OpenSmile.html">OpenSmile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a></li>
 </ul>
 
         </div>
@@ -85,43 +86,42 @@
            <div itemprop="articleBody">
              
   <section id="sec0">
-<span id="id1"></span><h1><a class="toc-backref" href="#id5" role="doc-backlink">はじめに</a><a class="headerlink" href="#sec0" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id6" role="doc-backlink">はじめに</a><a class="headerlink" href="#sec0" title="Permalink to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>qh73xe</p>
 </dd>
 <dt class="field-even">Last Change<span class="colon">:</span></dt>
-<dd class="field-even"><p>21-May-2024.</p>
+<dd class="field-even"><p>25-May-2024.</p>
 </dd>
 </dl>
 <nav class="contents" id="id2">
 <p class="topic-title">目次</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#sec0" id="id5">はじめに</a></p>
+<li><p><a class="reference internal" href="#sec0" id="id6">はじめに</a></p>
 <ul>
-<li><p><a class="reference internal" href="#sec0cap1" id="id6">このパートで行うこと</a></p></li>
-<li><p><a class="reference internal" href="#sec0cap2" id="id7">今日やること</a></p></li>
-<li><p><a class="reference internal" href="#python" id="id8">開発環境の構築 (PYTHON 編)</a></p></li>
-<li><p><a class="reference internal" href="#typescript" id="id9">開発環境の構築 (TYPESCRIPT 編)</a></p></li>
+<li><p><a class="reference internal" href="#sec0cap1" id="id7">このパートで行うこと</a></p></li>
+<li><p><a class="reference internal" href="#sec0cap2" id="id8">今日やること</a></p></li>
+<li><p><a class="reference internal" href="#python" id="id9">開発環境の構築 (PYTHON 編)</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="sec0cap1">
-<span id="id3"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#sec0cap1" title="Permalink to this heading"></a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#sec0cap1" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>この資料で扱う内容を理解する</p></li>
-<li><p>Python の仮想環境を理解する</p></li>
+<li><p>Python の実行環境を理解する</p></li>
 <li><p>音声の解析に必要なライブラリをインストールする</p></li>
 <li><p>Web アプリケーションに必要な環境を構築する</p></li>
 </ul>
 </section>
 <section id="sec0cap2">
-<span id="id4"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">今日やること</a><a class="headerlink" href="#sec0cap2" title="Permalink to this heading"></a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">今日やること</a><a class="headerlink" href="#sec0cap2" title="Permalink to this heading"></a></h2>
 <p>こんにちは. 早稲田大学, 菊池研究室博士浅井です.</p>
-<p>本日は, Open Smile についてお話をしていこうと思いますが,
-その前に, 簡単な自己紹介から始めていこうかなと思います.</p>
-<p>浅井は, 最近アクアリウムを趣味にしています.
+<p>本日は <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> についてお話をしていこうと思います.</p>
+<p>その前に軽いアイスブレイクとして簡単な自己紹介から始めていこうかなと思います.
+浅井は, 最近アクアリウムを趣味にしています.
 アクアリウム皆さんご存知でしょうか？
 以下の写真のようなものですね.</p>
 <figure class="align-center">
@@ -131,23 +131,23 @@
 生き物を飼育する趣味だと思われがちですが実は違います.
 じゃあなんだと言われると, 水であるとか、光であるとか、
 目に見えない要素をコントロールすることで、
-望ましい, きれいな環境を作っていくゲームになります.
-パラメータ設定を間違えると, 苔がでたり, 水が濁ったり, 生体が死んだりします.
+望ましい, きれいな風景を作っていくゲームになります.</p>
+<p>パラメータ設定を間違えると, 苔がでたり, 水が濁ったり, 生体が死んだりします.
 逆に, 適切なパラメータ設定をすると, きれいな水景が簡単に維持できるようにもなります.</p>
-<p>しかし水の中に溶けているものって見えないんですよね.
+<p>しかしコントロールをしたいものは, 水の中に溶けているため目には見えないんですよね.
 あるいは, 光の量や時間も操作することはできるのですが,
 それが適切なのかはなかなか分かりません.
 なんとかして, 目には見えないものの今の状態を知ることが重要になります.</p>
-<p>そこで, どうするかと言うと 大きく2つ方法があります。</p>
-<p>1 つ目の方法は水槽を良く観察するという方法です.
+<p>そこで, どうするかと言うと大きく2つの方法があります。</p>
+<p>1 つ目は水槽を良く観察するという方法です.
 周囲のもの, 例えばコケの量であるとか, 中に入っている生体の状態から予測していく方法です.
 経験豊富な達人になると, これが一番, 早くて正確だったりするのですけど,
 経験がないと, なかなか難しい.</p>
 <p>2 つ目の方法は, 試験薬を使って数値で計測すると言う方法です.
 有名なものを挙げれば, リトマス紙を使って pH を計測するみたいな方法です.
 この方法の良いところは, 経験がなくても今の状態を把握できることです.
-経験がなくとも, pH 7 となれば中性なのだとわかります.
-しかし, この方法にも欠点はあります.
+経験がなくとも pH 7 となれば中性なのだとわかります.</p>
+<p>しかし, この方法にも欠点はあります.
 例えば pH は, 水に溶解している酸性物質とアルカリ性物質のどちらが多いかという指標なのですが,
 これは両方多い汚い水も, 両方少ない綺麗な水も, 割合が同じなら同じ値が出でしまいます.
 つまり, 測っているものが何かということをきちんと知らないと間違った判断をしてしまうのです.</p>
@@ -160,13 +160,77 @@ OpenSmile も音声に対して特定のコマンドを利用すればさまざ�
 ただ, pH と同じように, 何を測っているものなのかを知らないと,
 案外間違った判断をしてしまうこともあります.</p>
 <p>今日のチュートリアルでは,
-この音を検査する方法について解説をしていき、
-時間的に可能であれば,
+この音を検査する方法について解説をしていき,
 実際に音声を収録して音響特徴量を算出するところまで解説できれば良いなと思います.</p>
 </section>
 <section id="python">
-<span id="sec0cap3"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">開発環境の構築 (PYTHON 編)</a><a class="headerlink" href="#python" title="Permalink to this heading"></a></h2>
-<p>このチュートリアルでは, Python 3 系を使用します.
+<span id="sec0cap3"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">開発環境の構築 (PYTHON 編)</a><a class="headerlink" href="#python" title="Permalink to this heading"></a></h2>
+<p>まずは, 音響特徴量を計測するための計測器の準備をしていきましょう.
+この計測器は, <code class="code docutils literal notranslate"><span class="pre">Python</span></code> で作成されているため, <code class="code docutils literal notranslate"><span class="pre">Python</span></code> の実行環境を整える必要があります.</p>
+<p>この実行環境は大きく 2 種類あります.
+1 つ目はクラウド環境, つまり Web サービスで実行する方法です.
+これはブラウザ上で Python のコードを実行できるサービスです.
+<code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> はその代表例です.
+<code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> の場合 <code class="code docutils literal notranslate"><span class="pre">Google</span></code> のサーバー上で <code class="code docutils literal notranslate"><span class="pre">Python</span></code> のコードを実行します.
+事前にいくつかの設定が行われていて, 気軽に試せることが特徴です.</p>
+<ul class="simple">
+<li><p>特にビデオカードのような高い機材を必要とする場合にはこの方法が便利です.</p></li>
+</ul>
+<p>しかし Google から見えないデータにはアクセスできません.
+基本的に問題になることは少ないのですが, 音声の録音機材を操作するためには,
+ちょっとした裏技が必要になります.</p>
+<ul class="simple">
+<li><p>だって勝手にマイクとかビデオとか操作されて, 部屋の様子とか取られたらすごく嫌ですよね.</p></li>
+</ul>
+<p>2 つ目の方法は, ローカル環境で <code class="code docutils literal notranslate"><span class="pre">Python</span></code> を実行する方法です.
+これは自分の PC に <code class="code docutils literal notranslate"><span class="pre">Python</span></code> をインストールして, その上でコードを実行する方法です.
+欠点は, 自分自身で正しい環境を構築しないといけないことです.
+逆に言えば, 相応の知識があれば, 何でもできるということです.</p>
+<ul class="simple">
+<li><p>そのため最終的にはローカル環境の方が便利で簡単になることが多いです.</p></li>
+</ul>
+<section id="google-colab">
+<h3>Google Colab 環境<a class="headerlink" href="#google-colab" title="Permalink to this heading"></a></h3>
+<p>今回のチュートリアルではクラウド環境 <code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> を使用します.
+音声の録音が行いにくいという欠点はありますが,
+事前準備がなくともすぐに実行できるため, チュートリアルの進行がスムーズになります.</p>
+<ul class="simple">
+<li><p>あくまでチュートリアルの進行がスムーズため <code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> を
+利用することにしているため実際のローカル環境を使用することをお勧めします.</p></li>
+</ul>
+<p><code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> 環境を使用するためには, 以下の手順を実行してください.</p>
+<ul class="simple">
+<li><p>まず, ブラウザを開きます</p></li>
+<li><p>次に Google にログインしていることを確認してください.</p></li>
+<li><p>その後 Google Drive を開きます.</p></li>
+<li><p>マイドライブの中にディレクトリを作成します
+- 例えば <cite>OpenSmileTutorial</cite> という名前でディレクトリを作成します.</p></li>
+<li><p>作成したディレクトリに入り, 右クリック (二つ指でクリック) し, 「その他」 → 「Google Colabolatory」を選択します.</p></li>
+<li><p>Untitled0.ipynb と書かれた箇所を選択し, 名称を決めます.
+- 今回は <cite>Google Colab の使い方.ipynb</cite> という名前にしましょう.</p></li>
+</ul>
+<p>その他, このツールの使い方はチュートリアルの本題からは外れるので口頭で説明をします.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>基本的な使い方</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.kikagaku.co.jp/kikagaku-blog/google-colab-howto/">https://www.kikagaku.co.jp/kikagaku-blog/google-colab-howto/</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Google Drive へのアクセス方法</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.kikagaku.co.jp/kikagaku-blog/google-colab-drive-mount/">https://www.kikagaku.co.jp/kikagaku-blog/google-colab-drive-mount/</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>ローカル 環境<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<p>ローカル環境を構築するためには, 以下の手順を実行してください.
+まず, そもそもで <code class="code docutils literal notranslate"><span class="pre">Python3</span></code> がインストールされているか確認してください.
 Python 3 系をインストールしていない場合は, 以下の手順でインストールしてください:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install python3
 </pre></div>
@@ -195,33 +259,9 @@ $ source venv/bin/activate
 $ pip install numpy scipy matplotlib pandas  # 数値計算用及び可視化ライブラリ
 $ pip install pyworld  # 最も基本的な音響解析ツール. 2 章で使用.
 $ pip install opensmile  # 今回の主題である音響解析ツール. 3 章で使用.
-$ pip install pyaudio  # Mac で音声収録を行うためのライブラリ. 4 章で使用.
-$ pip install Flask  # Web サーバーアプリケーションフレームワーク. 5 章で使用.
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>pyaudio のインストール.</p>
-<p>シリコンマックを利用する場合, 上のコマンドでは上手く行かない場合があります.
-その場合には, 以下の手順でインストールを行ってください:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install PortAudio
-$ python3 -m pip install pyaudio --global-option=&quot;build_ext&quot; --global-option=&quot;-I/opt/homebrew/include&quot; --global-option=&quot;-L/opt/homebrew/lib&quot;
-</pre></div>
-</div>
 </div>
 </section>
-<section id="typescript">
-<span id="sec0cap4"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">開発環境の構築 (TYPESCRIPT 編)</a><a class="headerlink" href="#typescript" title="Permalink to this heading"></a></h2>
-<p>これは, 主に 5 章で取り扱う内容です.
-時間的に 5 章に到達しないことも考えられるので,
-五章を開始した際に実施しましょう:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install node
-$ sudo npm install -g yarn
-$ yarn create vite
-$ yarn create vite ui --template react-ts
-</pre></div>
-</div>
-<p>これで, React + TypeScript のプロジェクトが作成されます.</p>
 </section>
 </section>
 

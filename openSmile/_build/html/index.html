@@ -49,8 +49,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Intro.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OpenSmile.html">OpenSmile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a></li>
 </ul>
 
         </div>
@@ -79,20 +77,22 @@
              
   <section id="open-smile-tutorial">
 <h1>Open Smile Tutorial<a class="headerlink" href="#open-smile-tutorial" title="Permalink to this heading"></a></h1>
-<p>このチュートリアルでは, Open Smile を用いて,
-音声から音響特徴量を計測できるようにする方法を整理します.</p>
-<p>このチュートリアルは, 大きく以下の 5 つのセクションに分かれています.
+<p>このチュートリアルでは <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> を用いて,
+音声から音響特徴量を計測する方法を解説します.</p>
+<p>このチュートリアルは, 大きく以下の 3 つのセクションに分かれています.
 それぞれのセクションは, どこから読み始めても問題ないように作成していますが,
 基本的には, 上から順番に読むことをお勧めします.</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>このチュートリアルでは,
-基本的に, Python 3 を用いて解説を行います.</p>
-<p>音声収録及び, Web アプリケーションの例には,
-一部, TypeScript を利用します.</p>
-<p>これらの一章で, これらの環境構築に関して
-簡単に触れますが, 基本的にはプログラミングが
-行えることを前提に資料を作成するので,
+<p>このチュートリアルの 1-3 章では <code class="code docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> を用いて解説を行います.
+チュートリアル中の Python コードは基本的に <code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> 環境を想定します.</p>
+<p>一方で <code class="code docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> 上で音声を録音するためには
+<code class="code docutils literal notranslate"><span class="pre">JavaScript</span></code> ないし <code class="code docutils literal notranslate"><span class="pre">TypeScript</span></code> の知識が必要になります.</p>
+<ul class="simple">
+<li><p>時間の都合上その方法についての解説は行いません.</p></li>
+</ul>
+<p>一章で, これらの環境構築に関して簡単に触れますが,
+基本的にはプログラミングが行えることを前提に資料を作成するので,
 プログラミング言語自体の詳細については省きます.</p>
 </div>
 <div class="toctree-wrapper compound">
@@ -102,7 +102,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap1">このパートで行うこと</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Intro.html#sec0cap2">今日やること</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Intro.html#python">開発環境の構築 (PYTHON 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Intro.html#typescript">開発環境の構築 (TYPESCRIPT 編)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SourceFilterModel.html">ソースフィルターモデル</a><ul>
@@ -122,24 +121,6 @@
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#praat">音声を録音する (Praat 編)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#open-smile">Open Smile を用いて音響特徴量を抽出する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id8">この章のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OpenSmile.html#id9">次の章に向けて</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Recording.html#id3">このパートで行うこと</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Recording.html#id4">音声の録音パラメータ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Recording.html#id5">この章を試すための環境構築</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Recording.html#python">音声を録音する (Python 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Recording.html#id6">録音した音声を保存する</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id2">このパートで行うこと</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id3">サーバーアンドクライアント</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#ui">UI 作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id4">音声を録音する (Web 編)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id5">音声解析サーバーを作成する</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WebApplication.html#id6">UI 表示を作成する</a></li>
 </ul>
 </li>
 </ul>

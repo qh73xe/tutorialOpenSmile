@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="./">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ソースフィルターモデル &mdash; OpenSmile Tutorial 0.1 ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
 
   
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=be13464f"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/translations.js?v=4dbe4bdc"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
@@ -94,33 +94,33 @@
            <div itemprop="articleBody">
              
   <section id="sec1">
-<span id="id1"></span><h1><a class="toc-backref" href="#id17" role="doc-backlink">ソースフィルターモデル</a><a class="headerlink" href="#sec1" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id15" role="doc-backlink">ソースフィルターモデル</a><a class="headerlink" href="#sec1" title="Permalink to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>qh73xe</p>
 </dd>
 <dt class="field-even">Last Change<span class="colon">:</span></dt>
-<dd class="field-even"><p>21-May-2024.</p>
+<dd class="field-even"><p>25-May-2024.</p>
 </dd>
 </dl>
 <nav class="contents" id="id2">
 <p class="topic-title">目次</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#sec1" id="id17">ソースフィルターモデル</a></p>
+<li><p><a class="reference internal" href="#sec1" id="id15">ソースフィルターモデル</a></p>
 <ul>
-<li><p><a class="reference internal" href="#sec1cap0" id="id18">このパートで行うこと</a></p></li>
-<li><p><a class="reference internal" href="#sec1cap1" id="id19">はじめに</a></p></li>
-<li><p><a class="reference internal" href="#sec1cap2" id="id20">この章を試すための環境構築</a></p></li>
-<li><p><a class="reference internal" href="#praat" id="id21">音声を録音する (Praat 編)</a></p></li>
-<li><p><a class="reference internal" href="#world" id="id22">World を用いて基本的な音響特徴量を把握する</a></p></li>
-<li><p><a class="reference internal" href="#sec1cap5" id="id23">この章のまとめ</a></p></li>
-<li><p><a class="reference internal" href="#sec1cap6" id="id24">次の章に向けて</a></p></li>
+<li><p><a class="reference internal" href="#sec1cap0" id="id16">このパートで行うこと</a></p></li>
+<li><p><a class="reference internal" href="#sec1cap1" id="id17">はじめに</a></p></li>
+<li><p><a class="reference internal" href="#sec1cap2" id="id18">この章を試すための環境構築</a></p></li>
+<li><p><a class="reference internal" href="#praat" id="id19">音声を録音する (Praat 編)</a></p></li>
+<li><p><a class="reference internal" href="#world" id="id20">World を用いて基本的な音響特徴量を把握する</a></p></li>
+<li><p><a class="reference internal" href="#sec1cap5" id="id21">この章のまとめ</a></p></li>
+<li><p><a class="reference internal" href="#sec1cap6" id="id22">次の章に向けて</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="sec1cap0">
-<span id="id3"></span><h2><a class="toc-backref" href="#id18" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#sec1cap0" title="Link to this heading"></a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id16" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#sec1cap0" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>音を音響特徴量に分解する感覚を掴む</p></li>
 <li><p>基本周波数がどのようなものか理解する</p></li>
@@ -129,7 +129,7 @@
 </ul>
 </section>
 <section id="sec1cap1">
-<span id="id4"></span><h2><a class="toc-backref" href="#id19" role="doc-backlink">はじめに</a><a class="headerlink" href="#sec1cap1" title="Link to this heading"></a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id17" role="doc-backlink">はじめに</a><a class="headerlink" href="#sec1cap1" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="Intro.html#sec0"><span class="std std-ref">前章</span></a> では, このドキュメントのテーマである OpenSmile は,
 音に対するリトマス試験紙みたいなものであると述べました.
 ここで, pH の意味を理解するためには,
@@ -139,10 +139,10 @@
 <p>音, ないし音声の基本要素を説明する概念に,
 ソースフィルターモデルがあります.
 このモデルを模式的に表現すると, 以下のようになります.</p>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id12">
 <img alt="_images/sfmodel.png" src="_images/sfmodel.png" />
 <figcaption>
-<p><span class="caption-text">ソースフィルターモデル</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-text">ソースフィルターモデル</span><a class="headerlink" href="#id12" title="この画像へのパーマリンク"></a></p>
 </figcaption>
 </figure>
 <p>ソースフィルターモデルでは,
@@ -154,16 +154,20 @@
 音源の情報と共鳴管の情報を取得, 観察してみましょう.</p>
 </section>
 <section id="sec1cap2">
-<span id="id5"></span><h2><a class="toc-backref" href="#id20" role="doc-backlink">この章を試すための環境構築</a><a class="headerlink" href="#sec1cap2" title="Link to this heading"></a></h2>
+<span id="id5"></span><h2><a class="toc-backref" href="#id18" role="doc-backlink">この章を試すための環境構築</a><a class="headerlink" href="#sec1cap2" title="Permalink to this heading"></a></h2>
 <p>この章を試すためには, 以下のライブラリが必要です:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install setuptools wheel ipython # python 用インタラクティブシェル
 $ pip install numpy scipy matplotlib pandas  # 数値計算用及び可視化ライブラリ
 $ pip install pyworld  # 最も基本的な音響解析ツール
 </pre></div>
 </div>
+<p>Google Colab で実行する場合は, まず, 新規ノートブックを作成し以下のセルを実行してください:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install pyworld
+</pre></div>
+</div>
 </section>
 <section id="praat">
-<span id="sec1cap3"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink">音声を録音する (Praat 編)</a><a class="headerlink" href="#praat" title="Link to this heading"></a></h2>
+<span id="sec1cap3"></span><h2><a class="toc-backref" href="#id19" role="doc-backlink">音声を録音する (Praat 編)</a><a class="headerlink" href="#praat" title="Permalink to this heading"></a></h2>
 <p>さて, 解析を行うためにはまず, 音声データが必要です.
 後の章では, <code class="code docutils literal notranslate"><span class="pre">python</span></code> コードから録音を行う方法を紹介する予定ですが,
 少し複雑なので, とりあえず, <code class="code docutils literal notranslate"><span class="pre">Praat</span></code> から音声を録音することにしましょう.</p>
@@ -182,9 +186,13 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <p>音声ファイルの保存先は <a class="reference internal" href="Intro.html#sec0cap3"><span class="std std-ref">前章</span></a> で作成した <code class="code docutils literal notranslate"><span class="pre">OpenSmileTutorial</span></code> ディレクトリに,
 <code class="code docutils literal notranslate"><span class="pre">sample1.wav</span></code> という名前で保存してください.</p>
 <p><a class="reference download internal" download="" href="_downloads/5ecfd3b41d179963ae50924d7a01010e/sample1.wav"><code class="xref download docutils literal notranslate"><span class="pre">sample1.wav</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Google Colab の場合, 前章で作成したディレクトリに音声ファイルをアップロードしてください.</p>
+</div>
 </section>
 <section id="world">
-<span id="sec1cap4"></span><h2><a class="toc-backref" href="#id22" role="doc-backlink">World を用いて基本的な音響特徴量を把握する</a><a class="headerlink" href="#world" title="Link to this heading"></a></h2>
+<span id="sec1cap4"></span><h2><a class="toc-backref" href="#id20" role="doc-backlink">World を用いて基本的な音響特徴量を把握する</a><a class="headerlink" href="#world" title="Permalink to this heading"></a></h2>
 <p>さて, それでは早速解析をしていきましょう.
 先にも述べたとおり, 基本的には, リトマス試験紙です.
 これを利用する手順は大きく以下の 4 つです.</p>
@@ -207,7 +215,7 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 補完機能等の利便性から, このチュートリアルでは <code class="code docutils literal notranslate"><span class="pre">ipython</span></code> を利用します.</p>
 </div>
 <section id="sec1cap41">
-<span id="id6"></span><h3>録音した音声を読み込む<a class="headerlink" href="#sec1cap41" title="Link to this heading"></a></h3>
+<span id="id6"></span><h3>録音した音声を読み込む<a class="headerlink" href="#sec1cap41" title="Permalink to this heading"></a></h3>
 <p>まず試験紙を用意します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">pyworld</span> <span class="k">as</span> <span class="nn">pw</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -220,6 +228,21 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">fs</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;./sample1.wav&quot;</span><span class="p">)</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Google Colab で実行する場合は, まず Google Drive にアクセスする必要があります.
+以下のコードを実行して, Google Drive にアクセスしてください:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   from google.colab import drive
+   drive.mount(&#39;/content/drive&#39;)
+
+その後左側にあるファイルアイコンをクリックし, ドライブ上のファイルを右クリックします.
+最後に 「パスをコピー」 を選択し, 上のコード :code:`./sample1.wav` の部分を置き換えてください::
+
+In [4]: fs, x = wavfile.read(&quot;/content/drive/MyDrive/OpenSmileTutorial/sample1.wav&quot;)
+In [5]: x = x.astype(np.float64)
+</pre></div>
+</div>
 </div>
 <p>第一引数には, 読み込みたい音声ファイルのパスを指定します.
 帰値は 2 つあります. <code class="code docutils literal notranslate"><span class="pre">fs</span></code> と <code class="code docutils literal notranslate"><span class="pre">x</span></code> です.
@@ -243,10 +266,10 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <p>さて, 標本を取得したあとにやることは,
 試験紙につけることです.
 これは以下のように行います:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">_f0</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">dio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>    <span class="c1"># raw pitch extractor</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f0</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">stonemask</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">_f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>  <span class="c1"># pitch refinement</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">sp</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">cheaptrick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>  <span class="c1"># extract smoothed spectrogram</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">ap</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">d4c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>         <span class="c1"># extract aperiodicity</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">_f0</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">dio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">f0</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">stonemask</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">_f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">sp</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">cheaptrick</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">ap</span> <span class="o">=</span> <span class="n">pw</span><span class="o">.</span><span class="n">d4c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>試験紙につけると, 3 つの値が得られます.
@@ -257,7 +280,7 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 フィルターの成分であるスペクトル <code class="code docutils literal notranslate"><span class="pre">sp</span></code> を観察していきます.</p>
 </section>
 <section id="sec1cap42">
-<span id="id7"></span><h3>基本周波数を表示してみる<a class="headerlink" href="#sec1cap42" title="Link to this heading"></a></h3>
+<span id="id7"></span><h3>基本周波数を表示してみる<a class="headerlink" href="#sec1cap42" title="Permalink to this heading"></a></h3>
 <p>まず, 基本周波数から確認をしていきましょう:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">f0</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
@@ -276,10 +299,10 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id15">
+<figure class="align-center" id="id13">
 <img alt="_images/f0.png" src="_images/f0.png" />
 <figcaption>
-<p><span class="caption-text">基本周波数</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-text">基本周波数</span><a class="headerlink" href="#id13" title="この画像へのパーマリンク"></a></p>
 </figcaption>
 </figure>
 <p>この図は, 横軸に時間, 縦軸に基本周波数を取ったグラフです.
@@ -305,7 +328,7 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 </div>
 </section>
 <section id="sec1cap43">
-<span id="id8"></span><h3>スペクトログラムを表示してみる<a class="headerlink" href="#sec1cap43" title="Link to this heading"></a></h3>
+<span id="id8"></span><h3>スペクトログラムを表示してみる<a class="headerlink" href="#sec1cap43" title="Permalink to this heading"></a></h3>
 <p>次に, フィルター側の成分である <code class="code docutils literal notranslate"><span class="pre">sp</span></code> を観察していきましょう:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">sp</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span>
@@ -342,10 +365,10 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<figure class="align-center" id="id16">
+<figure class="align-center" id="id14">
 <img alt="_images/sp.png" src="_images/sp.png" />
 <figcaption>
-<p><span class="caption-text">スペクトログラム</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+<p><span class="caption-text">スペクトログラム</span><a class="headerlink" href="#id14" title="この画像へのパーマリンク"></a></p>
 </figcaption>
 </figure>
 <p>この図は, 横軸に時間, 縦軸に周波数を取ったグラフです.
@@ -357,7 +380,7 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 声道の形状によって変化します.</p>
 </section>
 <section id="sec1cap45">
-<span id="id9"></span><h3>音響特徴量の合成をしてみる<a class="headerlink" href="#sec1cap45" title="Link to this heading"></a></h3>
+<span id="id9"></span><h3>音響特徴量の合成をしてみる<a class="headerlink" href="#sec1cap45" title="Permalink to this heading"></a></h3>
 <p>ここまでは, 音の特性というものは,
 ソースの特性とフィルターの特性に分解できるということを
 説明し, それぞれの特性の値を計測する方法について説明しました.</p>
@@ -373,7 +396,12 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;result.wav&quot;</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>22 行目で <code class="code docutils literal notranslate"><span class="pre">f0</span></code> や <code class="code docutils literal notranslate"><span class="pre">sp</span></code> など (:code:<a href="#id10"><span class="problematic" id="id11">`</span></a>ap`も利用する必要がありますが) から,
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Google Colab の場合, 保存先を変更してください:</p>
+<p>In [24]: wavfile.write(&quot;/content/drive/MyDrive/OpenSmileTutorial/result.wav&quot;, fs, y)</p>
+</div>
+<p>22 行目で <code class="code docutils literal notranslate"><span class="pre">f0</span></code> や <code class="code docutils literal notranslate"><span class="pre">sp</span></code> など ( <code class="code docutils literal notranslate"><span class="pre">ap</span></code> も利用する必要がありますが) から,
 音声波形を作成しています.</p>
 <p>これは波形データですので, <code class="code docutils literal notranslate"><span class="pre">x</span></code> と同様に一次元の数値の配列です:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">y</span>
@@ -396,14 +424,14 @@ $ pip install pyworld  # 最も基本的な音響解析ツール
 </section>
 </section>
 <section id="sec1cap5">
-<span id="id12"></span><h2><a class="toc-backref" href="#id23" role="doc-backlink">この章のまとめ</a><a class="headerlink" href="#sec1cap5" title="Link to this heading"></a></h2>
+<span id="id10"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink">この章のまとめ</a><a class="headerlink" href="#sec1cap5" title="Permalink to this heading"></a></h2>
 <p>この章では, 音響解析の基本になるソースフィルターモデルについて説明しました.
 音声の特徴は, ソースとフィルターの 2 つの要素に分解できるということを説明し,
 それぞれを実際に取り出す方法について説明しました.
 これらの値を簡単に観察し, それらを利用して音声を再合成する方法についても説明しました.</p>
 </section>
 <section id="sec1cap6">
-<span id="id13"></span><h2><a class="toc-backref" href="#id24" role="doc-backlink">次の章に向けて</a><a class="headerlink" href="#sec1cap6" title="Link to this heading"></a></h2>
+<span id="id11"></span><h2><a class="toc-backref" href="#id22" role="doc-backlink">次の章に向けて</a><a class="headerlink" href="#sec1cap6" title="Permalink to this heading"></a></h2>
 <p><code class="code docutils literal notranslate"><span class="pre">f0</span></code> や <code class="code docutils literal notranslate"><span class="pre">sp</span></code> には元の音声を再現できる程度に十分な情報が含まれていることは,
 お伝えできたと思います.</p>
 <p>ただ, です, 基本周波数や, スペクトル成分は, 少し問題があります.

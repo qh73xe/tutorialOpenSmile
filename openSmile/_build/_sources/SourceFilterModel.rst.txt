@@ -5,7 +5,7 @@
 ===========================
 
 :author: qh73xe
-:Last Change: 21-May-2024.
+:Last Change: 25-May-2024.
 
 .. contents::
     :depth: 2
@@ -63,6 +63,10 @@
     $ pip install numpy scipy matplotlib pandas  # 数値計算用及び可視化ライブラリ
     $ pip install pyworld  # 最も基本的な音響解析ツール
 
+Google Colab で実行する場合は, まず, 新規ノートブックを作成し以下のセルを実行してください::
+
+    !pip install pyworld
+
 .. _sec1cap3:
 
 音声を録音する (Praat 編)
@@ -89,6 +93,8 @@
 :code:`sample1.wav` という名前で保存してください.
 
 :download:`sample1.wav <./wav/sample1.wav>`.
+
+.. note:: Google Colab の場合, 前章で作成したディレクトリに音声ファイルをアップロードしてください.
 
 
 .. _sec1cap4:
@@ -138,6 +144,20 @@ World を用いて基本的な音響特徴量を把握する
     In [4]: fs, x = wavfile.read("./sample1.wav")
     In [5]: x = x.astype(np.float64)
 
+.. note:: 
+
+   Google Colab で実行する場合は, まず Google Drive にアクセスする必要があります.
+   以下のコードを実行して, Google Drive にアクセスしてください::
+
+       from google.colab import drive
+       drive.mount('/content/drive')
+
+    その後左側にあるファイルアイコンをクリックし, ドライブ上のファイルを右クリックします.
+    最後に 「パスをコピー」 を選択し, 上のコード :code:`./sample1.wav` の部分を置き換えてください::
+
+    In [4]: fs, x = wavfile.read("/content/drive/MyDrive/OpenSmileTutorial/sample1.wav")
+    In [5]: x = x.astype(np.float64)
+
 第一引数には, 読み込みたい音声ファイルのパスを指定します.
 帰値は 2 つあります. :code:`fs` と :code:`x` です.
 それぞれ値を見てみましょう::
@@ -163,10 +183,10 @@ World を用いて基本的な音響特徴量を把握する
 試験紙につけることです.
 これは以下のように行います::
 
-    In [8]: _f0, t = pw.dio(x, fs)    # raw pitch extractor
-    In [9]: f0 = pw.stonemask(x, _f0, t, fs)  # pitch refinement
-    In [10]: sp = pw.cheaptrick(x, f0, t, fs)  # extract smoothed spectrogram
-    In [11]: ap = pw.d4c(x, f0, t, fs)         # extract aperiodicity
+    In [8]: _f0, t = pw.dio(x, fs)
+    In [9]: f0 = pw.stonemask(x, _f0, t, fs)
+    In [10]: sp = pw.cheaptrick(x, f0, t, fs)
+    In [11]: ap = pw.d4c(x, f0, t, fs)
 
 
 試験紙につけると, 3 つの値が得られます.
@@ -311,7 +331,11 @@ f0 は声帯の振動数を示す指標なので,
     In [23]: y = y.astype(np.int16)
     In [24]: wavfile.write("result.wav", fs, y)
 
-22 行目で :code:`f0` や :code:`sp` など (:code:`ap`も利用する必要がありますが) から,
+.. note:: Google Colab の場合, 保存先を変更してください::
+
+    In [24]: wavfile.write("/content/drive/MyDrive/OpenSmileTutorial/result.wav", fs, y)
+
+22 行目で :code:`f0` や :code:`sp` など ( :code:`ap` も利用する必要がありますが) から,
 音声波形を作成しています.
 
 これは波形データですので, :code:`x` と同様に一次元の数値の配列です::

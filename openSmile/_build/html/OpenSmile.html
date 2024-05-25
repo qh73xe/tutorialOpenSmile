@@ -22,7 +22,6 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="音声の録音" href="Recording.html" />
     <link rel="prev" title="ソースフィルターモデル" href="SourceFilterModel.html" /> 
 </head>
 
@@ -60,11 +59,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id8">この章のまとめ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">次の章に向けて</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Recording.html">音声の録音</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WebApplication.html">Web アプリケーションを通じて音声を解析する</a></li>
 </ul>
 
         </div>
@@ -92,33 +88,32 @@
            <div itemprop="articleBody">
              
   <section id="opensmile">
-<h1><a class="toc-backref" href="#id10" role="doc-backlink">OpenSmile</a><a class="headerlink" href="#opensmile" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id9" role="doc-backlink">OpenSmile</a><a class="headerlink" href="#opensmile" title="Permalink to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">author<span class="colon">:</span></dt>
 <dd class="field-odd"><p>qh73xe</p>
 </dd>
 <dt class="field-even">Last Change<span class="colon">:</span></dt>
-<dd class="field-even"><p>21-May-2024.</p>
+<dd class="field-even"><p>25-May-2024.</p>
 </dd>
 </dl>
 <nav class="contents" id="id1">
 <p class="topic-title">目次</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#opensmile" id="id10">OpenSmile</a></p>
+<li><p><a class="reference internal" href="#opensmile" id="id9">OpenSmile</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id11">このパートで行うこと</a></p></li>
-<li><p><a class="reference internal" href="#id3" id="id12">はじめに</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id13">この章を試すための環境構築</a></p></li>
-<li><p><a class="reference internal" href="#praat" id="id14">音声を録音する (Praat 編)</a></p></li>
-<li><p><a class="reference internal" href="#open-smile" id="id15">Open Smile を用いて音響特徴量を抽出する</a></p></li>
-<li><p><a class="reference internal" href="#id8" id="id16">この章のまとめ</a></p></li>
-<li><p><a class="reference internal" href="#id9" id="id17">次の章に向けて</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id10">このパートで行うこと</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id11">はじめに</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id12">この章を試すための環境構築</a></p></li>
+<li><p><a class="reference internal" href="#praat" id="id13">音声を録音する (Praat 編)</a></p></li>
+<li><p><a class="reference internal" href="#open-smile" id="id14">Open Smile を用いて音響特徴量を抽出する</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id15">この章のまとめ</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
 <section id="id2">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">このパートで行うこと</a><a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>OpenSmile が解決したい課題を理解する</p></li>
 <li><p>OpenSmile の音響特徴量の基本構成を理解する</p></li>
@@ -127,7 +122,7 @@
 </ul>
 </section>
 <section id="id3">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">はじめに</a><a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">はじめに</a><a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="SourceFilterModel.html#sec1"><span class="std std-ref">前章</span></a> では, 音声データを解析するときには,
 ソース(音源, 基本周波数) とフィルタ(声道特性, スペクトル特性) の二つの要素を
 使えば, 元の音声データを再現できる程度の情報を得られることを説明しました.
@@ -149,16 +144,20 @@
 基本周波数やスペクトル特性から計算することができるツールです.</p>
 </section>
 <section id="id4">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">この章を試すための環境構築</a><a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">この章を試すための環境構築</a><a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
 <p>この章を試すためには, 以下のライブラリが必要です:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install setuptools wheel ipython # python 用インタラクティブシェル
 $ pip install numpy scipy matplotlib pandas  # 数値計算用及び可視化ライブラリ
 $ pip install opensmile  # 今回の主題である音響解析ツール. 3 章で使用.
 </pre></div>
 </div>
+<p>Google Colab で実行する場合は, まず, 新規ノートブックを作成し以下のセルを実行してください:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install opensmile
+</pre></div>
+</div>
 </section>
 <section id="praat">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">音声を録音する (Praat 編)</a><a class="headerlink" href="#praat" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">音声を録音する (Praat 編)</a><a class="headerlink" href="#praat" title="Permalink to this heading"></a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>この章は 3 章から読み始める方に向けた記述です.</p>
@@ -184,9 +183,13 @@ $ pip install opensmile  # 今回の主題である音響解析ツール. 3 章�
 <code class="code docutils literal notranslate"><span class="pre">OpenSmileTutorial</span></code> ディレクトリに,
 <code class="code docutils literal notranslate"><span class="pre">sample1.wav</span></code> という名前で保存してください.</p>
 <p><a class="reference download internal" download="" href="_downloads/5ecfd3b41d179963ae50924d7a01010e/sample1.wav"><code class="xref download docutils literal notranslate"><span class="pre">sample1.wav</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Google Colab の場合, 前章で作成したディレクトリに音声ファイルをアップロードしてください.</p>
+</div>
 </section>
 <section id="open-smile">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Open Smile を用いて音響特徴量を抽出する</a><a class="headerlink" href="#open-smile" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Open Smile を用いて音響特徴量を抽出する</a><a class="headerlink" href="#open-smile" title="Permalink to this heading"></a></h2>
 <p>早速 <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> を使って音響特徴量を抽出してみましょう.</p>
 <p>先にも述べたとおり, 基本的には, 音に対するリトマス試験紙です.
 これを利用する手順は大きく以下の 4 つです.</p>
@@ -254,6 +257,21 @@ F0 が時間的にどのように傾いているのかなどです.
 これは:ref:<cite>前章 &lt;sec1cap41&gt;</cite> と同様の方法で実施できます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">fs</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;./sample1.wav&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Google Colab で実行する場合は, まず Google Drive にアクセスする必要があります.
+以下のコードを実行して, Google Drive にアクセスしてください:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   from google.colab import drive
+   drive.mount(&#39;/content/drive&#39;)
+
+その後左側にあるファイルアイコンをクリックし, ドライブ上のファイルを右クリックします.
+最後に 「パスをコピー」 を選択し, 上のコード :code:`./sample1.wav` の部分を置き換えてください::
+
+In [4]: fs, x = wavfile.read(&quot;/content/drive/MyDrive/OpenSmileTutorial/sample1.wav&quot;)
+In [5]: x = x.astype(np.float64)
+</pre></div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
@@ -551,13 +569,31 @@ F0 に対しては, 上昇傾斜や下降傾斜の回数の平均や標準偏差
 </section>
 <section id="id7">
 <h3>どのような音響特徴量が変化するのかを考え実際に比較する<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<p>ここからは, 実際に様々な音を収録し,
+その音声データから音響特徴量を抽出してみましょう.</p>
+<ul class="simple">
+<li><p>これは一人で行っても良いですし, 複数人で行ってみても良いです.
+- まずはどういう音を比較したら面白いかを考えてみましょう.
+- 続いてその音はどういう音響特徴量が変化するのかを考えてみましょう.
+- 最後にその音響特徴量を計算して実際に比較をしてみましょう.
+- その差を可視化し, Google Colab 上で共有してみましょう.</p></li>
+</ul>
 </section>
 </section>
 <section id="id8">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink">この章のまとめ</a><a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
-</section>
-<section id="id9">
-<h2><a class="toc-backref" href="#id17" role="doc-backlink">次の章に向けて</a><a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">この章のまとめ</a><a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p>この章では, 音声データから音響特徴量を抽出する方法を学びました.
+音響特徴量は, 音声データから抽出される数値データであり,
+音声データの特性を数値化したものです.</p>
+<p>これには様々なものがあるのですが,
+その代表的なをまとめて計算することができるのが <code class="code docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Smile</span></code> です.</p>
+<p>Open Smile では解析を開始するまでに,
+どのような検査セットを使用するのかと, 検査する単位をどうするのかを
+指定する必要があります.</p>
+<p>これは, 音に対するリトマス試験紙のようなものであるため,
+どのような指標を選ぶかによって, 何が見えてくるか変わったり,
+間違った結論を導くこともあります.
+そのため, 事前にどのような指標がどのような意味を持つのかを理解しておくことが重要です.</p>
 </section>
 </section>
 
@@ -566,7 +602,6 @@ F0 に対しては, 上昇傾斜や下降傾斜の回数の平均や標準偏差
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="SourceFilterModel.html" class="btn btn-neutral float-left" title="ソースフィルターモデル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Recording.html" class="btn btn-neutral float-right" title="音声の録音" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
